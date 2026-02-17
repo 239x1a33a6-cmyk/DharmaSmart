@@ -1,189 +1,208 @@
-# 🏥 DHARMA — AI-Powered Disease Surveillance & Early Warning System
+# 🏥 Dharma Surveillance Platform
 
-> **Decentralized Health Analytics & Risk Monitoring Architecture**
-> Built for Telangana's Public Health Infrastructure
+<div align="center">
 
-[![Built with React](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://react.dev)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript)](https://www.typescriptlang.org)
-[![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite)](https://vitejs.dev)
-[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3-06B6D4?logo=tailwindcss)](https://tailwindcss.com)
-[![Deployed on Vercel](https://img.shields.io/badge/Vercel-Deployed-000?logo=vercel)](https://vercel.com)
+**AI-Powered Public Health Surveillance System for India**
 
----
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker)](https://www.docker.com/)
+[![Django](https://img.shields.io/badge/Django-6.0-092E20?logo=django)](https://www.djangoproject.com/)
+[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)](https://react.dev/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-336791?logo=postgresql)](https://www.postgresql.org/)
 
-## 📋 Problem Statement
-
-India's rural and semi-urban health surveillance suffers from **delayed outbreak detection**, **fragmented data collection**, and **poor inter-agency coordination**. DHARMA solves this with an AI-powered, role-based surveillance platform enabling real-time disease tracking, risk prediction, and coordinated intervention across all levels of governance.
+</div>
 
 ---
 
-## 🏗 Architecture
+## 📋 Table of Contents
 
-```
-┌──────────────────────────────────────────────────────────┐
-│                    DHARMA PLATFORM                       │
-├──────────────┬──────────────┬──────────────┬─────────────┤
-│  Community   │  ASHA Worker │   District   │   State     │
-│  Dashboard   │  Dashboard   │   Command    │  Governance │
-│              │              │   Center     │  Dashboard  │
-├──────────────┴──────────────┴──────────────┴─────────────┤
-│              AI Risk Engine & Analytics Layer             │
-├──────────────────────────────────────────────────────────┤
-│         Offline-First Data Ingestion (SMS/IVR/Web)       │
-├──────────────────────────────────────────────────────────┤
-│    GeoJSON Maps │ Recharts Viz │ Leaflet Risk Mapping    │
-└──────────────────────────────────────────────────────────┘
-```
+- [Overview](#-overview)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Quick Start](#-quick-start)
+- [Deployment](#-deployment)
+- [Project Structure](#-project-structure)
+- [Contributing](#-contributing)
 
 ---
 
-## 👥 User Roles & Dashboards
+## 🎯 Overview
 
-| Role | Dashboard | Key Capabilities |
-|------|-----------|-----------------|
-| **Community Member** | Community Portal | Report symptoms, water quality, view alerts, health education |
-| **ASHA Worker** | Field Operations | Field verification, cluster detection, weekly reports, escalation |
-| **Doctor / Clinic** | Clinical Dashboard | Patient analytics, advisory system, clinical reports |
-| **District Admin (DHO)** | District Command Center | Cluster monitoring, risk maps, interventions, resource allocation |
-| **State Authority** | State Governance | District performance, AI risk intelligence, compliance tracking |
-| **Super Admin** | Platform Control | User management, audit logs, AI config, emergency mode |
+Dharma is a real-time public health surveillance platform designed for India's National Health Mission (NHM). It enables health workers (ASHAs, doctors, district admins) to report, track, and respond to disease outbreaks with AI-powered insights and geospatial analytics.
 
 ---
 
-## 🔬 Key Features
+## ✨ Features
 
-- **🤖 AI Risk Intelligence** — Outbreak predictions, vulnerability rankings, policy suggestions
-- **🗺 Interactive Risk Maps** — GeoJSON-powered Telangana district maps with real-time risk coloring
-- **📊 Multi-Level Dashboards** — 6 role-based dashboards with 40+ functional modules
-- **📱 Offline-First Architecture** — SMS/IVR data ingestion, sync queue for intermittent connectivity
-- **⚡ Real-Time Alerts** — AI-generated early warnings with district-level granularity
-- **📋 Advisory System** — State-to-district governance flow with compliance tracking
-- **🏕 Health Camp Management** — Camp scheduling, ASHA activity tracking, feedback collection
-- **📈 Comprehensive Reports** — Auto-generated state/district reports with export capability
+- **Real-time Disease Reporting** - ASHA workers submit cases via mobile-optimized forms
+- **Geospatial Analytics** - District-level visualization with cluster detection
+- **Multi-Role Dashboards** - Custom interfaces for ASHAs, doctors, district admins, state authorities
+- **User Registration with Admin Approval** - Secure onboarding workflow
+- **Role-Based Access Control** - Granular permissions system
 
 ---
 
-## 🛠 Tech Stack
+## 🛠️ Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| Frontend | React 19, TypeScript 5.8, Vite 7 |
-| Styling | Tailwind CSS 3, Remix Icon |
-| Maps | Leaflet, React-Leaflet, GeoJSON |
-| Charts | Recharts 3 |
-| Routing | React Router 7 |
-| State | React Context + LocalStorage |
-| i18n | i18next (Telugu, Hindi, English) |
-| Deployment | Vercel |
+**Frontend:** React 18 + TypeScript + Vite + TailwindCSS + Leaflet
 
----
+**Backend:** Django 6.0 + Django REST Framework + PostgreSQL (PostGIS) + Celery + Redis
 
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js 18+
-- npm or yarn
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/239x1a33a6-cmyk/Tech-Phantoms-HealthTech.git
-cd Tech-Phantoms-HealthTech
-
-# Install dependencies
-npm install
-
-# Copy environment template
-cp .env.example .env
-
-# Start development server
-npm run dev
-```
-
-### Demo Accounts
-
-| Role | Login | Password |
-|------|-------|----------|
-| State Authority | `state.demo@dharma.gov` | `State@123` |
-| District Admin | `collector.demo@dharma.gov` | `Collector@123` |
-| Doctor | `doctor.demo@dharma.gov` | `Doctor@123` |
-| Super Admin | `admin` | `admin123` |
-| ASHA Worker | `9000000001` (OTP) | `123456` |
-| Community | `9876543210` (OTP) | `123456` |
+**DevOps:** Docker + Docker Compose + Nginx
 
 ---
 
 ## 📁 Project Structure
 
 ```
-src/
-├── components/
-│   ├── layout/          # DistrictLayout, StateLayout, SuperAdminLayout
-│   ├── maps/            # DistrictRiskMap (Leaflet + GeoJSON)
-│   └── ui/              # Reusable UI components
-├── pages/
-│   ├── state/           # State Governance Dashboard (8 modules)
-│   ├── district/        # District Command Center (14 modules)
-│   ├── asha/            # ASHA Worker Dashboard (16 modules)
-│   ├── community/       # Community Portal (7 modules)
-│   ├── clinic/          # Clinical Dashboard
-│   └── admin/           # Super Admin Panel (8 modules)
-├── context/             # AuthContext (role-based auth)
-├── services/            # Data ingestion, validation
-├── data/                # GeoJSON, mock analytics
-├── mocks/               # Demo data for all dashboards
-└── router/              # Route configuration
+Dharma/
+├── frontend/              # React application
+│   ├── src/              # Source code
+│   ├── public/           # Static assets
+│   ├── package.json      # Dependencies
+│   ├── Dockerfile        # Frontend container
+│   └── nginx.conf        # Nginx config for SPA
+├── backend/              # Django application
+│   ├── apps/            # Django apps (authentication, asha_reports, etc.)
+│   ├── config/          # Django settings
+│   ├── requirements.txt # Python dependencies
+│   └── Dockerfile       # Backend container
+├── docker-compose.yml   # Local development orchestration
+└── README.md           # This file
 ```
 
 ---
 
-## 🔒 Security
+## 🚀 Quick Start
 
-- Role-based access control (6 roles with granular permissions)
-- Protected routes with role validation
-- No secrets in source code — all via environment variables
-- `.gitignore` excludes `.env`, database files, private keys, raw shapefiles
+### Option 1: Docker (Recommended)
+
+```bash
+# Clone repository
+git clone https://github.com/yourusername/dharma-surveillance.git
+cd dharma-surveillance
+
+# Set up environment variables
+cp backend/.env.example backend/.env
+cp frontend/.env.example frontend/.env
+
+# Edit .env files with your configuration
+nano backend/.env
+
+# Start all services
+docker-compose up -d --build
+
+# Run migrations
+docker-compose exec backend python manage.py migrate
+
+# Create superuser
+docker-compose exec backend python manage.py createsuperuser
+
+# Load initial data
+docker-compose exec backend python manage.py populate_data
+```
+
+**Access:**
+- Frontend: http://localhost
+- Backend API: http://localhost:8000/api
+- Django Admin: http://localhost:8000/admin
+
+### Option 2: Local Development
+
+**Backend:**
+```bash
+cd backend
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
+```
+
+**Frontend:**
+```bash
+cd frontend
+npm install
+cp .env.example .env
+npm run dev
+```
 
 ---
 
 ## 🌐 Deployment
 
-### Vercel (Frontend)
+### Render.com (Backend) + Vercel (Frontend)
 
-1. Connect GitHub repo to Vercel
-2. Set build command: `npm run build`
-3. Set output directory: `dist`
-4. Add environment variables in Vercel dashboard
+**Recommended for production deployment:**
 
-### Environment Variables (set in Vercel)
+1. **Backend (Render):**
+   - Create PostgreSQL database (with PostGIS)
+   - Create Redis instance
+   - Deploy Django app from `backend/` directory
+   - Set environment variables from `backend/.env.example`
 
-```
-VITE_API_URL=https://your-backend-url.com
-VITE_SUPABASE_URL=your_supabase_url
-VITE_SUPABASE_ANON_KEY=your_key
+2. **Frontend (Vercel):**
+   - Import repository
+   - Set root directory to `frontend/`
+   - Build command: `npm run build`
+   - Output directory: `dist`
+   - Add environment variable: `VITE_API_URL=https://your-backend.onrender.com/api`
+
+**See `render_deployment_guide.md` for detailed step-by-step instructions.**
+
+### Docker Production
+
+```bash
+docker-compose -f docker-compose.yml up -d --build
 ```
 
 ---
 
-## 🔮 Future Scope
+## 🔐 Environment Variables
 
-- Backend API with FastAPI/Node.js for real data persistence
-- Real-time WebSocket alerts
-- Mobile app (React Native) for ASHA field workers
-- ML model integration for outbreak prediction (LSTM/Prophet)
-- WhatsApp Bot integration for community reporting
-- Aadhaar-based ASHA worker verification
-- Integration with IDSP (Integrated Disease Surveillance Programme)
+**Backend** (`backend/.env`):
+- `SECRET_KEY` - Django secret key
+- `DEBUG` - Debug mode (False in production)
+- `DATABASE_URL` - PostgreSQL connection string
+- `ALLOWED_HOSTS` - Comma-separated allowed hosts
+- `CORS_ALLOWED_ORIGINS` - Frontend URLs
+
+**Frontend** (`frontend/.env`):
+- `VITE_API_URL` - Backend API URL
+
+See `.env.example` files for complete lists.
 
 ---
 
-## 👨‍💻 Team
+## 📚 API Documentation
 
-**Tech Phantoms** — Built for HealthTech Innovation
+- **Authentication**: `/api/auth/login/`, `/api/auth/register/`, `/api/auth/registrations/`
+- **ASHA Reports**: `/api/asha/reports/`
+- **Districts**: `/api/district/boundaries/`
+- **Clinical Reports**: `/api/clinical/reports/`
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ---
 
 ## 📄 License
 
-This project is for demonstration and hackathon purposes.
+This project is licensed under the MIT License.
+
+---
+
+<div align="center">
+
+**Made with ❤️ for India's Public Health**
+
+</div>

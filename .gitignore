@@ -1,67 +1,147 @@
-# Dependencies
-node_modules/
-
-# Build output
-dist/
-build/
-out/
-.next/
-
-# Environment files — NEVER commit secrets
+# ============================================
+# CRITICAL: Environment Variables & Secrets
+# ============================================
 .env
 .env.local
 .env.production
 .env.staging
 .env.*.local
-
-# IDE / Editor
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS files
-.DS_Store
-Thumbs.db
-Desktop.ini
-
-# Debug / Logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Coverage
-coverage/
-*.lcov
-
-# Database files
-*.sqlite
-*.db
-*.sqlite3
-
-# Security — Private keys / certs
 *.pem
 *.key
 *.crt
 private/
 private_keys/
+secrets/
 
-# Raw geospatial data (heavy shapefiles)
+# ============================================
+# Frontend (Node.js / React / Vite)
+# ============================================
+node_modules/
+dist/
+build/
+out/
+.next/
+*.tsbuildinfo
+auto-imports.d.ts
+
+# Frontend logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ============================================
+# Backend (Python / Django)
+# ============================================
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+*.sqlite
+*.db
+
+# Django static & media files
+/staticfiles/
+/static_collected/
+/media/
+backend/staticfiles/
+backend/media/
+backend/uploads/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# ============================================
+# Database Files
+# ============================================
+*.sqlite
+*.sqlite3
+*.db
+
+# ============================================
+# Docker
+# ============================================
+.docker/
+docker-compose.override.yml
+*.dockerfile.swp
+
+# ============================================
+# IDE / Editors
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# ============================================
+# OS Files
+# ============================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+.AppleDouble
+.LSOverride
+
+# ============================================
+# Testing & Coverage
+# ============================================
+coverage/
+*.lcov
+.nyc_output/
+htmlcov/
+.pytest_cache/
+.coverage
+.coverage.*
+nosetests.xml
+coverage.xml
+
+# ============================================
+# Geospatial Data (Heavy Files)
+# ============================================
 *.shp
 *.dbf
 *.shx
 *.prj
 indian-district-boundaries-master/
 
-# Upload directories
-backend/uploads/
-uploads/
-
-# Lint artifacts
+# ============================================
+# Build Artifacts & Logs
+# ============================================
+*.log
+pip-log.txt
+pip-delete-this-directory.txt
 lint-errors.json
 
-# Misc generated
-auto-imports.d.ts
-*.tsbuildinfo
+# ============================================
+# Deployment & CI/CD
+# ============================================
+.vercel
+.netlify
+
+# ============================================
+# Misc
+# ============================================
+.cache/
+.temp/
+temp/
+tmp/

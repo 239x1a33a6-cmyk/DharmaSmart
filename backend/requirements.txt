@@ -1,0 +1,17 @@
+Django
+djangorestframework
+djangorestframework-simplejwt
+psycopg2-binary
+celery
+redis
+twilio
+gunicorn
+uvicorn
+python-dotenv
+drf-spectacular
+scikit-learn
+pandas
+numpy
+dj-database-url
+django-cors-headers
+django-celery-results
