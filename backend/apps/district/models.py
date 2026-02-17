@@ -1,10 +1,13 @@
-from django.contrib.gis.db import models
+# TODO: Re-enable when using PostGIS-enabled database
+# from django.contrib.gis.db import models
+from django.db import models
 from django.conf import settings
 
 class DistrictBoundary(models.Model):
     district_name = models.CharField(max_length=100, unique=True)
     state_name = models.CharField(max_length=100)
-    geom = models.MultiPolygonField(srid=4326)
+    # TODO: Re-enable when using PostGIS-enabled database
+    # geom = models.MultiPolygonField(srid=4326)
 
     def __str__(self):
         return self.district_name
@@ -12,7 +15,8 @@ class DistrictBoundary(models.Model):
 class VillageBoundary(models.Model):
     village_name = models.CharField(max_length=100)
     district = models.ForeignKey(DistrictBoundary, on_delete=models.CASCADE, related_name='villages')
-    geom = models.MultiPolygonField(srid=4326)
+    # TODO: Re-enable when using PostGIS-enabled database
+    # geom = models.MultiPolygonField(srid=4326)
 
     def __str__(self):
         return f"{self.village_name} ({self.district.district_name})"
@@ -36,3 +40,4 @@ class Directive(models.Model):
 
     def __str__(self):
         return f"Directive: {self.title} by {self.issued_by}"
+

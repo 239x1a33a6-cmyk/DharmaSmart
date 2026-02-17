@@ -1,4 +1,6 @@
-from django.contrib.gis.db import models
+# TODO: Re-enable when using PostGIS-enabled database
+# from django.contrib.gis.db import models
+from django.db import models
 from django.conf import settings
 
 class AshaReport(models.Model):
@@ -6,7 +8,8 @@ class AshaReport(models.Model):
     district = models.ForeignKey('district.DistrictBoundary', on_delete=models.SET_NULL, null=True, related_name='asha_reports')
     village = models.ForeignKey('district.VillageBoundary', on_delete=models.SET_NULL, null=True, related_name='asha_reports')
     symptoms_json = models.JSONField()
-    geo_point = models.PointField(srid=4326)
+    # TODO: Re-enable when using PostGIS-enabled database
+    # geo_point = models.PointField(srid=4326)
     created_at = models.DateTimeField(auto_now_add=True)
     STATUS_CHOICES = [
         ('SUBMITTED', 'Submitted'),
@@ -28,7 +31,9 @@ class WaterQualityReading(models.Model):
     ph = models.FloatField()
     turbidity = models.FloatField()
     timestamp = models.DateTimeField()
-    geo_point = models.PointField(srid=4326)
+    # TODO: Re-enable when using PostGIS-enabled database
+    # geo_point = models.PointField(srid=4326)
+    village = models.ForeignKey('district.VillageBoundary', on_delete=models.SET_NULL, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
