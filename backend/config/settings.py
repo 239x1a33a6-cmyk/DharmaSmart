@@ -31,6 +31,11 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
 # Application definition
 
 INSTALLED_APPS = [
+    # Local Apps - MUST be first for custom User model!
+    'apps.authentication',
+    'apps.core',
+    
+    # Django built-in
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,15 +50,13 @@ INSTALLED_APPS = [
     'drf_spectacular',
     'django_celery_results',
     
-    # Local Apps
-    'apps.authentication',
+    # Other Local Apps
     'apps.asha_reports',
     'apps.clinical_reports',
     'apps.district',
     'apps.state',
     'apps.alerts',
     'apps.analytics',
-    'apps.core',
 ]
 
 MIDDLEWARE = [
