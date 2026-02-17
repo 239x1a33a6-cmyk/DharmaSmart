@@ -3,6 +3,7 @@ from django.urls import path, include
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from apps.core.views import quick_setup
 
 @api_view(['GET'])
 def api_root(request):
@@ -29,6 +30,9 @@ def api_root(request):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    # Quick Setup (Temporary - for first-time deployment)
+    path('setup/', quick_setup, name='quick-setup'),
     
     # API Root
     path('api/', api_root, name='api-root'),
