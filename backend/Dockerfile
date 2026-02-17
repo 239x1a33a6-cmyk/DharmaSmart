@@ -16,4 +16,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000"]
+# Make entrypoint script executable
+RUN chmod +x entrypoint.sh
+
+# Use entrypoint script
+CMD ["./entrypoint.sh"]
+
