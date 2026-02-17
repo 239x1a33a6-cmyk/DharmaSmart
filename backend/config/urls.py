@@ -1,9 +1,37 @@
 from django.contrib import admin
 from django.urls import path, include
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
+@api_view(['GET'])
+def api_root(request):
+    """API root endpoint showing available endpoints"""
+    return Response({
+        'message': 'Dharma Surveillance API',
+        'version': '1.0',
+        'endpoints': {
+            'authentication': '/api/auth/',
+            'asha_reports': '/api/asha/',
+            'district': '/api/district/',
+            'clinical_reports': '/api/clinical/',
+            'alerts': '/api/alerts/',
+            'state': '/api/state/',
+            'analytics': '/api/analytics/',
+            'documentation': {
+                'swagger': '/api/docs/',
+                'redoc': '/api/redoc/',
+                'schema': '/api/schema/',
+            },
+            'admin': '/admin/',
+        }
+    })
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    # API Root
+    path('api/', api_root, name='api-root'),
     
     # API Endpoints
     path('api/auth/', include('apps.authentication.urls')),
